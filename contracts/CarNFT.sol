@@ -29,7 +29,10 @@ contract CarNFT is ERC721URIStorage, Ownable {
     }
 
     mapping(uint256 => Car) public cars;
+    mapping(uint256 => Part) public parts;
 
+    event CarNFTCreated(uint256 tokenId, string make, string model, uint256 year);
+    event PartNFTCreated(uint256 tokenId, string name, string typePart, string rank);  
     event NFTFused(uint256 newTokenId, uint256 carTokenId, uint256 partTokenId);
 
     constructor() ERC721("CarNFT", "CAR") {}
@@ -49,6 +52,29 @@ contract CarNFT is ERC721URIStorage, Ownable {
         _setTokenURI(newItemId, tokenURI);
 
         cars[newItemId] = Car(make, model, year, imageURI, description);
+
+        emit CarNFTCreated(newItemId, make, model, year);
+
+        return newItemId;
+    }
+
+    function createPartNFT(
+        string memory name,
+        string memory typePart,
+        string memory imageURI,
+        string memory rank,
+        string memory description,
+        string memory tokenURI
+    ) public returns (uint256) {
+        _tokenIds.increment();
+
+        uint256 newItemId = _tokenIds.current();
+        _mint(msg.sender, newItemId);
+        _setTokenURI(newItemId, tokenURI);
+
+        parts[newItemId] = Part(name, typePart, imageURI, rank, description);
+
+        emit PartNFTCreated(newItemId, name, typePart, rank);
 
         return newItemId;
     }
