@@ -1,19 +1,25 @@
-const hre = require("hardhat");
+import { ethers } from "hardhat";
 
 async function main() {
-  // Nous obtenons le contrat à déployer
-  const CarNFT = await hre.ethers.getContractFactory("CarNFT");
-  const carNFT = await CarNFT.deploy();
+  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
+  const unlockTime = currentTimestampInSeconds + 60;
 
-  await carNFT.deployed();
+  const lockedAmount = ethers.parseEther("0.001");
 
-  console.log("CarNFT deployed to:", carNFT.address);
+  const CarNFT = await ethers.deployContract("CarNFT");
+
+  await CarNFT.waitForDeployment();
+
+  console.log(
+    `Lock with ${ethers.formatEther(
+      lockedAmount
+    )}ETH and unlock timestamp ${unlockTime} deployed to ${CarNFT.target}`
+  );
 }
 
-// Nous recommandons cette configuration de traitement d'erreur pour attraper toutes les erreurs asynchrones
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+// We recommend this pattern to be able to use async/await everywhere
+// and properly handle errors.
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
