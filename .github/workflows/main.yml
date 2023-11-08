@@ -1,4 +1,5 @@
 name: CI
+
 on:
   push:
     branches: [main]
@@ -11,15 +12,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Install packages
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - run: yarn --ignore-scripts
-        shell: bash
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Create local node and deploy
         run: |
-          yarn hardhat node &
-          yarn hardhat run scripts/deploy.ts --network localhost
+          npx hardhat node &
+          sleep 5 # Give the local node some time to start
+          npx hardhat run scripts/deploy.ts --network localhost
+
       - name: Run Tests
-        run: yarn hardhat test
+        run: npx hardhat test
