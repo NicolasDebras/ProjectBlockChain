@@ -18,6 +18,16 @@ contract CarNFT is ERC721URIStorage, Ownable {
         string desc; 
     }
 
+
+    // Piece de voiture 
+    struct Part {
+        string name;
+        string typePart;
+        string imageURI;
+        string rank; 
+        string desc; 
+    }
+
     mapping(uint256 => Car) public cars;
 
     event NFTFused(uint256 newTokenId, uint256 carTokenId, uint256 partTokenId);
@@ -64,7 +74,7 @@ contract CarNFT is ERC721URIStorage, Ownable {
 
         // Brûler les NFTs originaux
         // _burn(carTokenId);
-        // _burn(partTokenId);
+        _burn(partTokenId);
 
         emit NFTFused(newTokenId, carTokenId, partTokenId);
 
