@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Marketplace</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Car Marketplace</h2>
+    <div class="row" id="carContainer">
+
+    </div>
+</div>
+
+<script>
+    const carData = [
+        { name: "Skoda", price: "20 090 €", imageUrl: "images/car1.jpg" },
+        { name: "LAND ROVER DEFENDER", price: "68 400 €", imageUrl: "images/car2.jpg" },
+        { name: "Jeep", price: "24 300 €", imageUrl: "images/car3.jpg" },
+        { name: "Caradisiac", price: "31 300 €", imageUrl: "images/car4.jpg" },
+        { name: "DS Automobiles ", price: "11 000 €", imageUrl: "images/car5.jpg" },
+        { name: "Toyota Land Cruiser", price: "53 240 €", imageUrl: "images/car6.jpg" },
+        { name: "Renault Austral", price: "35 000 €", imageUrl: "images/car7.jpg" }
+    ];
+
+    const carContainer = document.getElementById("carContainer");
+
+    carData.forEach((car) => {
+        const cardHtml = `
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="${car.imageUrl}" class="card-img-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-bold">${car.name}</h5>
+                        <p class="card-text"><strong>Price:</strong> ${car.price}</p>
+                        <!--<a href="#" class="btn btn-primary">Buy</a>-->
+                    </div>
+                </div>
+            </div>
+        `;
+        carContainer.innerHTML += cardHtml;
+    });
+</script>
+
+</body>
+</html>
