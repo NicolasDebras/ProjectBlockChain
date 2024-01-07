@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //pour ccoonnecter le wallet
     async function connectWallet() {
         try {
-            // Ici, vous mettriez votre logique pour la connexion au wallet
             const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
             openPopup(accounts[0]);
         } catch (error) {
