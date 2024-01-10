@@ -67,11 +67,11 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    // development: {
-    //  host: "127.0.0.1",     // Localhost (default: none)
-    //  port: 8545,            // Standard Ethereum port (default: none)
-    //  network_id: "*",       // Any network (default: none)
-    // },
+    development: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "*",
+    },
     //
     // An additional network, but with some advanced options…
     // advanced: {
@@ -99,15 +99,15 @@ module.exports = {
     //   network_id: 2111,   // This network is yours, in the cloud.
     //   production: true    // Treats this network as if it was a public net. (default: false)
     // }
-	mainnet: {
-      provider: () => new HDWalletProvider(MNEMONIC, `https://mainnet.infura.io/v3/${PROJECT_ID}`),
-      network_id: 1,        // Mainnet ID
-      gasPrice: 10000000000, // Gas price - adjust appropriately to the current network condition
+	//mainnet: {
+    //  provider: () => new HDWalletProvider(MNEMONIC, `https://mainnet.infura.io/v3/${PROJECT_ID}`),
+    //  network_id: 1,        // Mainnet ID
+    //  gasPrice: 10000000000, // Gas price - adjust appropriately to the current network condition
       // gas: 5500000,       // Gas limit - adjust according to your contract's needs
-      confirmations: 2,     // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 200,   // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true      // Skip dry run before migrations? (default: false for public nets )
-    },
+    //  confirmations: 2,     // # of confs to wait between deployments. (default: 0)
+    //  timeoutBlocks: 200,   // # of blocks before a deployment times out  (minimum/default: 50)
+    //  skipDryRun: true      // Skip dry run before migrations? (default: false for public nets )
+    //},
   },
 
   // Set default mocha options here, use special reporters, etc.
@@ -118,7 +118,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.21",      // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.1",      // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {

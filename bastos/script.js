@@ -29,4 +29,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     document.getElementById('connectWallet').addEventListener('click', connectWallet);
     document.querySelector('.close-button').addEventListener('click', closePopup);
+	
+    let contractABI, contractAddress, contract;
+
+    fetch('../contracts/build/contracts/CarNFT.json')
+        .then(response => response.json())
+        .then(data => {
+            contractABI = data.abi;
+            contractAddress = data.networks['1704885168162'].address;
+            const web3 = new Web3(window.ethereum || "http://localhost:8545");
+            contract = new web3.eth.Contract(contractABI, contractAddress);
+
+            document.getElementById('createCarNFTForm').addEventListener('submit', async function(event) {
+                event.preventDefault();
+                const make = document.getElementById('make').value;
+                const model = document.getElementById('model').value;
+                const year = document.getElementById('year').value;
+                const imageURI = document.getElementById('imageURI').value;
+                const description = document.getElementById('description').value;
+                const tokenURI = document.getElementById('tokenURI').value;
+                
+                try {
+                    const accounts = await web3.eth.getAccounts();
+                    const receipt = await contract.methods.createCarNFT(make, model, year, imageURI, description, tokenURI)
+                        .send({ from: accounts[0] });
+                    console.log('NFT créé avec succès', receipt);
+                } catch (error) {
+                    console.error('Erreur lors de la création du NFT:', error);
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement du contrat:', error);
+        });
 });

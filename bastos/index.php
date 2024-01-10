@@ -72,13 +72,23 @@
 <body>
     <h1>Coucou</h1>
     <button id="connectWallet">Connecter Wallet</button>
-	<!-- confirmation -->
 	<div id="popup" class="popup">
 		<div class="popup-content">
 			<span class="close-button">&times;</span>
 			<p id="popupMessage">Vous êtes connecté à l'adresse : <span id="walletAddress"></span></p>
 		</div>
 	</div>
+	
+	<h1>Créer un Car NFT</h1>
+		<form id="createCarNFTForm">
+			<input type="text" id="make" placeholder="Marque">
+			<input type="text" id="model" placeholder="Modèle">
+			<input type="number" id="year" placeholder="Année">
+			<input type="text" id="imageURI" placeholder="URI de l'image">
+			<textarea id="description" placeholder="Description"></textarea>
+			<input type="text" id="tokenURI" placeholder="Token URI">
+			<button type="submit">Créer Car NFT</button>
+		</form>
     <script src="script.js"></script>
 </body>
 </html>
