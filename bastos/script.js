@@ -52,12 +52,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 try {
                     const accounts = await web3.eth.getAccounts();
                     const receipt = await contract.methods.createCarNFT(make, model, year, imageURI, description, tokenURI)
-                        .send({ from: accounts[0] });
+                        .send({ from: accounts[0], gasPrice: '20000000000' });
                     console.log('NFT créé avec succès', receipt);
                 } catch (error) {
                     console.error('Erreur lors de la création du NFT:', error);
                 }
             });
+			
+			async function displayNFTs() {
+			  const nftCount = await contract.methods.getAllTokenIds().call();
+			  const nftDisplayDiv = document.getElementById('nftDisplay');
+
+			  for (let i = 0; i < nftCount.length; i++) {
+				const tokenId = nftCount[i];
+				const nftDetails = await contract.methods.cars(tokenId).call();
+				const nftElement = document.createElement('div');
+				nftElement.innerHTML = `
+				  <h3>${nftDetails.make} ${nftDetails.model} (${nftDetails.year})</h3>
+				  <img src="${nftDetails.imageURI}" alt="Image of ${nftDetails.make} ${nftDetails.model}">
+				  <p>Description: ${nftDetails.desc}</p>
+				`;
+				nftDisplayDiv.appendChild(nftElement);
+			  }
+			}
+
+			displayNFTs();
         })
         .catch(error => {
             console.error('Erreur lors du chargement du contrat:', error);

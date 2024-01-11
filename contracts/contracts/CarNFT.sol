@@ -9,6 +9,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract CarNFT is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
+    uint256[] private _allTokenIds;
 
     struct Car {
         string make;
@@ -36,6 +37,10 @@ contract CarNFT is ERC721URIStorage, Ownable {
     event NFTFused(uint256 newTokenId, uint256 carTokenId, uint256 partTokenId);
 
     constructor() ERC721("CarNFT", "CAR") {}
+	
+	function getAllTokenIds() public view returns (uint256[] memory) {
+        return _allTokenIds;
+    }
 
     function createCarNFT(
         string memory make,
@@ -46,15 +51,13 @@ contract CarNFT is ERC721URIStorage, Ownable {
         string memory tokenURI
     ) public returns (uint256) {
         _tokenIds.increment();
-
         uint256 newItemId = _tokenIds.current();
         _mint(msg.sender, newItemId);
         _setTokenURI(newItemId, tokenURI);
-
         cars[newItemId] = Car(make, model, year, imageURI, description);
+        _allTokenIds.push(newItemId);
 
         emit CarNFTCreated(newItemId, make, model, year);
-
         return newItemId;
     }
 

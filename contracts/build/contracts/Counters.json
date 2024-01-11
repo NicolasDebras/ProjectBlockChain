@@ -1,9 +1,9 @@
 {
   "contractName": "Counters",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Matt Condon (@shrugs)\",\"details\":\"Provides counters that can only be incremented, decremented or reset. This can be used e.g. to track the number of elements in a mapping, issuing ERC721 ids, or counting request ids. Include with `using Counters for Counters.Counter;`\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Counters\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@openzeppelin/contracts/utils/Counters.sol\":\"Counters\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]}},\"version\":1}",
-  "bytecode": "0x6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220c964df1ec036ce06ac8f7bd383388364be43da3a629cf6d7505cfd65b8800e2864736f6c63430008150033",
-  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220c964df1ec036ce06ac8f7bd383388364be43da3a629cf6d7505cfd65b8800e2864736f6c63430008150033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Matt Condon (@shrugs)\",\"details\":\"Provides counters that can only be incremented, decremented or reset. This can be used e.g. to track the number of elements in a mapping, issuing ERC721 ids, or counting request ids. Include with `using Counters for Counters.Counter;`\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Counters\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@openzeppelin/contracts/utils/Counters.sol\":\"Counters\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220f7ab9631425d9ad99cae1f5e6434a30d6ffcac09b211e47ed4128660ae7abc6f64736f6c63430008010033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220f7ab9631425d9ad99cae1f5e6434a30d6ffcac09b211e47ed4128660ae7abc6f64736f6c63430008010033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
@@ -36,7 +36,6 @@
       {
         "abstract": false,
         "baseContracts": [],
-        "canonicalName": "Counters",
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
@@ -51,7 +50,6 @@
           1810
         ],
         "name": "Counters",
-        "nameLocation": "432:8:11",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -63,7 +61,6 @@
                 "id": 1741,
                 "mutability": "mutable",
                 "name": "_value",
-                "nameLocation": "794:6:11",
                 "nodeType": "VariableDeclaration",
                 "scope": 1742,
                 "src": "786:14:11",
@@ -87,7 +84,6 @@
               }
             ],
             "name": "Counter",
-            "nameLocation": "454:7:11",
             "nodeType": "StructDefinition",
             "scope": 1810,
             "src": "447:374:11",
@@ -118,7 +114,6 @@
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberLocation": "926:6:11",
                     "memberName": "_value",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": 1741,
@@ -140,7 +135,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "current",
-            "nameLocation": "836:7:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 1746,
@@ -151,7 +145,6 @@
                   "id": 1745,
                   "mutability": "mutable",
                   "name": "counter",
-                  "nameLocation": "860:7:11",
                   "nodeType": "VariableDeclaration",
                   "scope": 1754,
                   "src": "844:23:11",
@@ -167,9 +160,6 @@
                     "pathNode": {
                       "id": 1743,
                       "name": "Counter",
-                      "nameLocations": [
-                        "844:7:11"
-                      ],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 1742,
                       "src": "844:7:11"
@@ -195,7 +185,6 @@
                   "id": 1748,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 1754,
                   "src": "892:7:11",
@@ -262,7 +251,6 @@
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": true,
-                          "memberLocation": "1040:6:11",
                           "memberName": "_value",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 1741,
@@ -309,7 +297,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "increment",
-            "nameLocation": "954:9:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 1758,
@@ -320,7 +307,6 @@
                   "id": 1757,
                   "mutability": "mutable",
                   "name": "counter",
-                  "nameLocation": "980:7:11",
                   "nodeType": "VariableDeclaration",
                   "scope": 1768,
                   "src": "964:23:11",
@@ -336,9 +322,6 @@
                     "pathNode": {
                       "id": 1755,
                       "name": "Counter",
-                      "nameLocations": [
-                        "964:7:11"
-                      ],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 1742,
                       "src": "964:7:11"
@@ -383,7 +366,6 @@
                       "id": 1775,
                       "mutability": "mutable",
                       "name": "value",
-                      "nameLocation": "1145:5:11",
                       "nodeType": "VariableDeclaration",
                       "scope": 1795,
                       "src": "1137:13:11",
@@ -425,7 +407,6 @@
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberLocation": "1161:6:11",
                     "memberName": "_value",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": 1741,
@@ -535,7 +516,6 @@
                     "isPure": false,
                     "kind": "functionCall",
                     "lValueRequested": false,
-                    "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
                     "src": "1177:49:11",
@@ -579,7 +559,6 @@
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": true,
-                          "memberLocation": "1268:6:11",
                           "memberName": "_value",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 1741,
@@ -656,7 +635,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "decrement",
-            "nameLocation": "1083:9:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 1772,
@@ -667,7 +645,6 @@
                   "id": 1771,
                   "mutability": "mutable",
                   "name": "counter",
-                  "nameLocation": "1109:7:11",
                   "nodeType": "VariableDeclaration",
                   "scope": 1796,
                   "src": "1093:23:11",
@@ -683,9 +660,6 @@
                     "pathNode": {
                       "id": 1769,
                       "name": "Counter",
-                      "nameLocations": [
-                        "1093:7:11"
-                      ],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 1742,
                       "src": "1093:7:11"
@@ -745,7 +719,6 @@
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "1376:6:11",
                       "memberName": "_value",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 1741,
@@ -790,7 +763,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "reset",
-            "nameLocation": "1318:5:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 1800,
@@ -801,7 +773,6 @@
                   "id": 1799,
                   "mutability": "mutable",
                   "name": "counter",
-                  "nameLocation": "1340:7:11",
                   "nodeType": "VariableDeclaration",
                   "scope": 1809,
                   "src": "1324:23:11",
@@ -817,9 +788,6 @@
                     "pathNode": {
                       "id": 1797,
                       "name": "Counter",
-                      "nameLocations": [
-                        "1324:7:11"
-                      ],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 1742,
                       "src": "1324:7:11"
@@ -850,20 +818,18 @@
           }
         ],
         "scope": 1811,
-        "src": "424:971:11",
-        "usedErrors": [],
-        "usedEvents": []
+        "src": "424:971:11"
       }
     ],
     "src": "87:1309:11"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.21+commit.d9974bed.Emscripten.clang"
+    "version": "0.8.1+commit.df193b15.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-01-10T11:36:18.828Z",
+  "updatedAt": "2024-01-11T07:57:36.964Z",
   "devdoc": {
     "author": "Matt Condon (@shrugs)",
     "details": "Provides counters that can only be incremented, decremented or reset. This can be used e.g. to track the number of elements in a mapping, issuing ERC721 ids, or counting request ids. Include with `using Counters for Counters.Counter;`",

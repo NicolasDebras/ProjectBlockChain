@@ -89,6 +89,10 @@
 			<input type="text" id="tokenURI" placeholder="Token URI">
 			<button type="submit">Créer Car NFT</button>
 		</form>
+	
+	<!--pour afficher nos nft-->
+	<div id="nftDisplay"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
