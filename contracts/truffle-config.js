@@ -44,8 +44,8 @@
 require('dotenv').config();
 //const { MNEMONIC, PROJECT_ID } = process.env;
 
-const MNEMONIC = "squirrel purpose expire lawn interest luggage depart gallery invest panel connect mail";
-const PROJECT_ID = "202ed51f53874d52ad61744f2c3a3bd5";
+//const MNEMONIC = "squirrel purpose expire lawn interest luggage depart gallery invest panel connect mail";
+//const PROJECT_ID = "202ed51f53874d52ad61744f2c3a3bd5";
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 

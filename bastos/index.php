@@ -6,6 +6,32 @@
     <title>Wallet</title>
     <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
     <style>
+		header {
+			background-color: #333;
+			color: white;
+			padding: 10px 0;
+		}
+
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		nav a {
+			color: white;
+			text-decoration: none;
+			padding: 10px 20px;
+			transition: background-color 0.3s;
+		}
+
+		nav a:hover {
+			background-color: #555;
+		}
+		
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -67,17 +93,46 @@
 			text-decoration: none;
 			cursor: pointer;
 		}
+		
+		.nft-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+
+		.nft-item {
+			width: 30%;
+			margin-bottom: 20px;
+		}
+
+		.nft-item img {
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+		}
+
     </style>
 </head>
 <body>
-    <h1>Coucou</h1>
-    <button id="connectWallet">Connecter Wallet</button>
+    <header>
+        <nav>
+            <ul>
+                <li><a id="walletValue">0 ETH</a></li>
+                <li><a href="#fusion">Fusion</a></li>
+                <li><a href="#classement">Classement</a></li>
+                <li><a id="connectWallet">Connecter Wallet</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>MarketPlace</h1>
 	<div id="popup" class="popup">
 		<div class="popup-content">
 			<span class="close-button">&times;</span>
 			<p id="popupMessage">Vous êtes connecté à l'adresse : <span id="walletAddress"></span></p>
 		</div>
-	</div>
+	</div>	
+	<!--pour afficher nos nft-->
+	<div id="nftDisplay" class="nft-container"></div>
 	
 	<h1>Créer un Car NFT</h1>
 		<form id="createCarNFTForm">
@@ -89,9 +144,6 @@
 			<input type="text" id="tokenURI" placeholder="Token URI">
 			<button type="submit">Créer Car NFT</button>
 		</form>
-	
-	<!--pour afficher nos nft-->
-	<div id="nftDisplay"></div>
 
     <script src="script.js"></script>
 </body>
