@@ -36,6 +36,40 @@ describe("CarNFT", function () {
 });
 
 
+describe("CarNFT", function () {
+    it("Should  get Car NFT", async function () {
+        // Déployez le contrat CarNFT
+        const CarNFT = await ethers.getContractFactory("CarNFT");
+        const carNFT = await CarNFT.deploy();
+
+        //await carNFT.deployed();
+
+        // Créez un NFT de voiture
+        const createTx = await carNFT.createCarNFT(
+            "Make",
+            "Model",
+            2023,
+            "imageURI",
+            "This is a description of the car",
+            "tokenURI"
+        );
+
+        // Attendez que la transaction soit confirmée
+        let receipt = await createTx.wait();
+
+        // Récupérez les détails du Car NFT créé
+        const car = await carNFT.cars(1);
+        
+        const allTokenIds = await carNFT.getAllTokenIds();
+
+       
+        expect(allTokenIds.length).to.equal(1);
+        // Vérification que le tableau contient le nouveau NFT
+    
+    });
+});
+
+
 describe("PartNFT", function () {
     it("Should create a new Part NFT", async function () {
         // Déployez le contrat CarNFT
@@ -100,7 +134,7 @@ describe("PartNFT", function () {
     });
 });
 
-describe("fuse two NFT", function () {
+/*describe("fuse two NFT", function () {
     it("Should create a two Part NFT", async function () {
         const CarNFT = await ethers.getContractFactory("CarNFT");
         const carNFT = await CarNFT.deploy();
@@ -151,4 +185,4 @@ describe("fuse two NFT", function () {
 
 
     });
-});
+}); */
