@@ -31,14 +31,6 @@ contract CarNFT is ERC721URIStorage, Ownable {
 
     mapping(uint256 => Car) public cars;
     mapping(uint256 => Part) public parts;
-	
-	 //mapping de tokenid à sa vente
-    mapping(uint256 => NFTSale) public nftSales;
-
-    //evenements pour les action de vente
-    event NFTListedForSale(uint256 indexed tokenId, uint256 price, address seller);
-    event NFTSaleCancelled(uint256 indexed tokenId, address seller);
-    event NFTSold(uint256 indexed tokenId, uint256 price, address seller, address buyer);
 
     event CarNFTCreated(uint256 tokenId, string make, string model, uint256 year);
     event PartNFTCreated(uint256 tokenId, string name, string typePart, string rank);  
